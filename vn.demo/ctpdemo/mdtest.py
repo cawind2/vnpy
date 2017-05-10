@@ -136,9 +136,9 @@ def main():
     
     # 登陆
     loginReq = {}                           # 创建一个空字典
-    loginReq['UserID'] = ''                 # 参数作为字典键值的方式传入
-    loginReq['Password'] = ''               # 键名和C++中的结构体成员名对应
-    loginReq['BrokerID'] = ''    
+    loginReq['UserID'] = '090228'                 # 参数作为字典键值的方式传入
+    loginReq['Password'] = '353036'               # 键名和C++中的结构体成员名对应
+    loginReq['BrokerID'] = '9999'
     reqid = reqid + 1                       # 请求数必须保持唯一性
     i = api.reqUserLogin(loginReq, 1)
     sleep(0.5)
@@ -152,15 +152,15 @@ def main():
     #i = api.exit()
     
     ## 获取交易日，目前输出为空
-    #day = api.getTradingDay()
-    #print 'Trading Day is:' + str(day)
+    day = api.getTradingDay()
+    print 'Trading Day is:' + str(day)
     #sleep(0.5)
     
     ## 订阅合约，测试通过
-    #i = api.subscribeMarketData('IF1505')
+    i = api.subscribeMarketData('IF1505')
     
     ## 退订合约，测试通过
-    #i = api.unSubscribeMarketData('IF1505')
+    i = api.unSubscribeMarketData('IF1505')
     
     # 订阅询价，测试通过
     i = api.subscribeForQuoteRsp('IO1504-C-3900')
